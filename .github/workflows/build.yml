@@ -22,16 +22,10 @@ jobs:
       - name: Instalar Gradle
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget unzip
-          wget -q https://services.gradle.org/distributions/gradle-8.5-bin.zip
-          unzip -q gradle-8.5-bin.zip
-          echo "$PWD/gradle-8.5/bin" >> $GITHUB_PATH
-
-      - name: Dar permisos
-        run: chmod +x gradlew
+          sudo apt-get install -y gradle
 
       - name: Compilar el mod
-        run: ./gradlew build
+        run: gradle build
 
       - name: Subir archivo
         uses: actions/upload-artifact@v4
