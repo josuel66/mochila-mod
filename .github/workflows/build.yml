@@ -22,15 +22,19 @@ jobs:
           java-version: 21
           distribution: temurin
 
-      - name: Dar permiso de ejecución
-        run: chmod +x gradlew
+      - name: Instalar Gradle 8.10
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip
+          wget -q https://services.gradle.org/distributions/gradle-8.10-bin.zip
+          unzip -q gradle-8.10-bin.zip
+          echo "$PWD/gradle-8.10/bin" >> $GITHUB_PATH
 
-      - name: Build with Gradle
-        run: ./gradlew build
+      - name: Compilar con Gradle
+        run: gradle build
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: mochilaoj-mod
           path: build/libs/*.jar
-          
