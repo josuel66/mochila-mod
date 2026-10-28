@@ -20,7 +20,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Dar permisos
-        run: chmod +x gradlew
+        run: |
+          chmod +x gradlew
+          ls -la
 
       - name: Compilar el mod
         run: ./gradlew build
