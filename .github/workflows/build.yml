@@ -19,10 +19,16 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Dar permisos
+      - name: Instalar Gradle
         run: |
-          chmod +x gradlew
-          ls -la
+          sudo apt-get update
+          sudo apt-get install -y wget unzip
+          wget -q https://services.gradle.org/distributions/gradle-8.5-bin.zip
+          unzip -q gradle-8.5-bin.zip
+          echo "$PWD/gradle-8.5/bin" >> $GITHUB_PATH
+
+      - name: Dar permisos
+        run: chmod +x gradlew
 
       - name: Compilar el mod
         run: ./gradlew build
