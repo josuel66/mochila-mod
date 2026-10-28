@@ -3,7 +3,7 @@
   "id": "mochilaoj",
   "version": "${version}",
   "name": "Mochila OJ",
-  "description": "Mi mod de mochila para Minecraft 1.21.1",
+  "description": "Mi mod de mochila para Minecraft 1.21.11",
   "authors": ["Tú"],
   "contact": {},
   "license": "MIT",
@@ -17,11 +17,10 @@
   "mixins": [
     "mochilaoj.mixins.json"
   ],
-    "depends": {
+  "depends": {
     "fabricloader": ">=0.16.5",
     "minecraft": "~1.21.11",
     "java": ">=21",
     "fabric-api": "*"
-    }
-  
+  }
 }
