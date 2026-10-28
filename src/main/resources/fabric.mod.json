@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "mochilaoj",
+  "version": "${version}",
+  "name": "Mochila OJ",
+  "description": "Mi mod de mochila",
+  "authors": ["Tú"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/mochilaoj/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.mochilaoj.MochilaOJMod"
+    ]
+  },
+  "mixins": [
+    "mochilaoj.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}
