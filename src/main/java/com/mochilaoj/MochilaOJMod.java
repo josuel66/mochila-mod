@@ -10,9 +10,7 @@ public class MochilaOJMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        // Registramos nuestros ítems
         ModItems.register();
-        
         LOGGER.info("¡Mochila OJ cargada correctamente!");
     }
 }
